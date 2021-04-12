@@ -221,7 +221,7 @@ void AudioEffectEnsemble::update(void)
     sum+=(int32_t)interpBuffer((float)outIndex4 + offset4);
     sum+=(int32_t)interpBuffer((float)outIndex5 + offset5);
     sum+=(int32_t)interpBuffer((float)outIndex6 + offset6);
-    sum=sum/3;
+    sum=sum/6;
     outblock->data[i]=(uint16_t)sum;
 
     sum=(int32_t)interpBuffer((float)outIndex1 + offset1+PHASE_90);
@@ -230,7 +230,7 @@ void AudioEffectEnsemble::update(void)
     sum+=(int32_t)interpBuffer((float)outIndex4 + offset4+PHASE_90);
     sum+=(int32_t)interpBuffer((float)outIndex5 + offset5+PHASE_90);
     sum+=(int32_t)interpBuffer((float)outIndex6 + offset6+PHASE_90);
-    sum=sum/3;
+    sum=sum/6;
     outblockB->data[i]=(uint16_t)sum;
   }
 
