@@ -102,7 +102,7 @@ static const audio_block_t zeroblock = {
 void AudioEffectEnsemble::lfoRate(float rate)
 {
   //Assumes COUNTS_PER_LFO is giving 6Hz
-  countsPerLfo = round((COUNTS_PER_LFO * 6) / rate);
+  countsPerLfo = round(AUDIO_SAMPLE_RATE_EXACT / (LFO_SAMPLES * rate));
   if (countsPerLfo < 1) {
     countsPerLfo = 1;
   }
